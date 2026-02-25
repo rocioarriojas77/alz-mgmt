@@ -51,7 +51,7 @@ custom_replacements = {
     dcr_vm_insights_name                    = "dcr-vm-insights"
 
     # Resource provisioning global connectivity
-    ddos_protection_plan_enabled = true
+    ddos_protection_plan_enabled = false
 
     # Resource provisioning primary connectivity
     primary_virtual_network_gateway_express_route_enabled                = true
@@ -176,7 +176,6 @@ management_group_settings = {
     ama_user_assigned_managed_identity_id       = "$${ama_user_assigned_managed_identity_id}"
     ama_user_assigned_managed_identity_name     = "$${ama_user_assigned_managed_identity_name}"
     log_analytics_workspace_id                  = "$${log_analytics_workspace_id}"
-    ddos_protection_plan_id                     = "$${ddos_protection_plan_id}"
     private_dns_zone_subscription_id            = "$${subscription_id_connectivity}"
     private_dns_zone_region                     = "$${starter_location_01}"
     private_dns_zone_resource_group_name        = "$${dns_resource_group_name}"
@@ -358,3 +357,4 @@ telemetry_additional_content = {
   deployed_by    = "alz-terraform-accelerator"
   correlation_id = "00000000-0000-0000-0000-000000000000"
 }
+
