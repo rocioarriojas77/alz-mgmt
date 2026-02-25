@@ -296,38 +296,7 @@ hub_virtual_networks = {
         }
       }
     }
-    virtual_network_gateways = {
-      subnet_address_prefix = "$${primary_gateway_subnet_address_prefix}"
-      express_route = {
-        name                                  = "$${primary_virtual_network_gateway_express_route_name}"
-        hosted_on_behalf_of_public_ip_enabled = "$${primary_virtual_network_gateway_express_route_hobo_public_ip_enabled}"
-        ip_configurations = {
-          default = {
-            # name = "vnetGatewayConfigdefault"  # For backwards compatibility with previous naming, uncomment this line
-            public_ip = {
-              name = "$${primary_virtual_network_gateway_express_route_public_ip_name}"
-            }
-          }
-        }
-      }
-      vpn = {
-        name = "$${primary_virtual_network_gateway_vpn_name}"
-        ip_configurations = {
-          active_active_1 = {
-            # name = "vnetGatewayConfigactive_active_1"  # For backwards compatibility with previous naming, uncomment this line
-            public_ip = {
-              name = "$${primary_virtual_network_gateway_vpn_public_ip_name_1}"
-            }
-          }
-          active_active_2 = {
-            # name = "vnetGatewayConfigactive_active_2"  # For backwards compatibility with previous naming, uncomment this line
-            public_ip = {
-              name = "$${primary_virtual_network_gateway_vpn_public_ip_name_2}"
-            }
-          }
-        }
-      }
-    }
+    
     private_dns_zones = {
       parent_id = "$${dns_resource_group_id}"
       private_link_private_dns_zones_regex_filter = {
@@ -340,13 +309,6 @@ hub_virtual_networks = {
       subnet_address_prefix = "$${primary_private_dns_resolver_subnet_address_prefix}"
       name                  = "$${primary_private_dns_resolver_name}"
     }
-    bastion = {
-      subnet_address_prefix = "$${primary_bastion_subnet_address_prefix}"
-      name                  = "$${primary_bastion_host_name}"
-      bastion_public_ip = {
-        name = "$${primary_bastion_host_public_ip_name}"
-      }
-    }
   }
 }
 
@@ -357,5 +319,6 @@ telemetry_additional_content = {
   deployed_by    = "alz-terraform-accelerator"
   correlation_id = "00000000-0000-0000-0000-000000000000"
 }
+
 
 
