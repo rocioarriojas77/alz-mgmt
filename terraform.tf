@@ -21,9 +21,15 @@ terraform {
   backend "azurerm" {}
 }
 
+
 provider "alz" {
   library_overwrite_enabled = true
+
   library_references = [
+    {
+      path = "platform/amba"
+      ref  = "platform/amba/2026.01.1"
+    },
     {
       custom_url = "${path.root}/lib"
     }
