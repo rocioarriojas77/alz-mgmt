@@ -46,6 +46,11 @@ custom_replacements = {
     log_analytics_workspace_name            = "law-management-$${starter_location_01}"
     ddos_protection_plan_name               = "ddos-$${starter_location_01}"
     ama_user_assigned_managed_identity_name = "uami-management-ama-$${starter_location_01}"
+    
+    # AMBA prerequisites
+    amba_resource_group_name                 = "rg-amba-$${starter_location_01}"
+    amba_user_assigned_managed_identity_name = "uami-mgmt-amba-$${starter_location_01}"
+
     dcr_change_tracking_name                = "dcr-change-tracking"
     dcr_defender_sql_name                   = "dcr-defender-sql"
     dcr_vm_insights_name                    = "dcr-vm-insights"
@@ -179,6 +184,26 @@ management_group_settings = {
     private_dns_zone_subscription_id            = "$${subscription_id_connectivity}"
     private_dns_zone_region                     = "$${starter_location_01}"
     private_dns_zone_resource_group_name        = "$${dns_resource_group_name}"
+
+    # --- AMBA policy defaults ---
+    amba_alz_management_subscription_id            = "$${subscription_id_management}"
+    amba_alz_resource_group_location               = "$${starter_location_01}"
+    amba_alz_resource_group_name                   = "$${amba_resource_group_name}"
+    amba_alz_user_assigned_managed_identity_name   = "$${amba_user_assigned_managed_identity_name}"
+    amba_alz_action_group_email                    = []
+    amba_alz_arm_role_id                           = []
+    amba_alz_resource_group_tags                   = {}
+    amba_alz_byo_user_assigned_managed_identity_id = ""
+    amba_alz_disable_tag_name                      = ""
+    amba_alz_disable_tag_values                    = []
+    amba_alz_webhook_service_uri                   = []
+    amba_alz_event_hub_resource_id                 = []
+    amba_alz_function_resource_id                  = ""
+    amba_alz_function_trigger_url                  = ""
+    amba_alz_logicapp_resource_id                  = ""
+    amba_alz_logicapp_callback_url                 = ""
+    amba_alz_byo_alert_processing_rule             = ""
+    amba_alz_byo_action_group                      = []
     /*
     # Example of allowed locations for Sovereign Landing Zones policies
     allowed_locations = [
@@ -357,5 +382,6 @@ telemetry_additional_content = {
   deployed_by    = "alz-terraform-accelerator"
   correlation_id = "00000000-0000-0000-0000-000000000000"
 }
+
 
 
