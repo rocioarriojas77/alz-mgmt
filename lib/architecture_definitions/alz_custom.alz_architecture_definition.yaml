@@ -1,6 +1,7 @@
 "management_groups":
 - "archetypes":
   - "root_custom"
+  - "amba_root"
   "display_name": "Azure Landing Zones"
   "exists": true
   "id": "alz"
